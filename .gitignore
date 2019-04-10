@@ -1,0 +1,13 @@
+*~
+*.swp
+*.swo
+
+.DS_Store
+.DS_Store?
+._*
+
+.netrwhist
+installer.sh
+/dein/*
+/plugins/*
+
