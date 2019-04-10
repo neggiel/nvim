@@ -30,6 +30,11 @@ imap <C-n> <Down>
 imap <C-b> <Left>
 imap <C-f> <Right>
 
+" 括弧補完
+imap { {}<LEFT>
+imap [ []<LEFT>
+imap ( ()<LEFT>
+
 " 新規タブ
 nnoremap <C-t><C-t> :tabnew<CR>
 
@@ -38,7 +43,6 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
-
 
 " クリップボードにコピー
 set clipboard=unnamed
@@ -68,6 +72,8 @@ if dein#load_state('~/.config/nvim/dein')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('kana/vim-operator-user')
   call dein#add('kana/vim-operator-replace')
+  call dein#add('bronson/vim-trailing-whitespace')
+  call dein#add('tomtom/tcomment_vim')
 
   " Required:
   call dein#end()
