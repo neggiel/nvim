@@ -18,7 +18,7 @@ colorscheme molokai
 " マクロ
 let @d = 'vf";x'
 let @b = 'o'
-let @n = ':tabnew:b1'
+let @n = ':tabnew:e .'
 
 " ファイルタイプの変更
 "nnoremap <C-h><C-h> :set filetype=html<CR>
@@ -31,12 +31,14 @@ imap <C-b> <Left>
 imap <C-f> <Right>
 
 " 括弧補完
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ( ()<LEFT>
+" imap { {}<LEFT>
+" imap [ []<LEFT>
+" imap ( ()<LEFT>
 
-" 新規タブ
-nnoremap <C-t><C-t> :tabnew<CR>
+" netrw
+nnoremap <C-e><C-e> :e .<CR>
+nnoremap <C-t><C-e> :tabnew<CR>:e .<CR>
+nnoremap <C-t><C-w> :bd<CR>
 
 " 行が折り返し表示されていた場合、行単位ではなく表示行単位でカーソルを移動する
 nnoremap j gj
