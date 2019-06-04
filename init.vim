@@ -5,20 +5,22 @@ set noswapfile
 set number
 set hidden
 set expandtab
-set tabstop=2
-set softtabstop=2
+set tabstop=4
+set softtabstop=4
 set autoindent
 set smartindent
-set shiftwidth=2
+set shiftwidth=4
 set whichwrap=b,s,h,l,<,>,[,],~ " カーソルの左右移動で行末から次の行の行頭への移動が可能になる
 set cursorline
-set pastetoggle=<C-e>
+"set pastetoggle=<C-e>
 colorscheme molokai
 
 " マクロ
 let @d = 'vf";x'
 let @b = 'o'
-let @n = ':tabnew:e .'
+"let @n = ':tabnew:e .'
+let @p = ':set paste'
+let @o = ':set nopaste'
 
 " ファイルタイプの変更
 "nnoremap <C-h><C-h> :set filetype=html<CR>
@@ -102,9 +104,9 @@ inoremap <expr><tab> pumvisible() ? "\<C-n>" :
 
 
 " neosnippet
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
 if has('conceal')
   set conceallevel=2 concealcursor=niv
