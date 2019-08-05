@@ -51,6 +51,10 @@ nnoremap <up> gk
 " クリップボードにコピー
 set clipboard=unnamed
 
+" terminal
+autocmd TermOpen * setlocal norelativenumber
+autocmd TermOpen * setlocal nonumber
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
