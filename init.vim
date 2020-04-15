@@ -26,6 +26,11 @@ let @o = ':set nopaste'
 "nnoremap <C-h><C-h> :set filetype=html<CR>
 "nnoremap <C-j><C-j> :set filetype=php<CR>
 
+" 文字化け対策
+set ttimeout
+set ttimeoutlen=50
+set ambiwidth=double
+
 " インサートモードでの移動
 imap <C-p> <Up>
 imap <C-n> <Down>
@@ -36,6 +41,19 @@ imap <C-f> <Right>
 " imap { {}<LEFT>
 " imap [ []<LEFT>
 " imap ( ()<LEFT>
+
+" leader
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader><Bar> :vsplit<CR>
+nnoremap <Leader>- :split<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>c :close<CR>
+nnoremap <Leader>e :e .<CR>
+nnoremap <Leader>t :tabnew<CR>:e .<CR>
+nnoremap <Leader>, gT
+nnoremap <Leader>. gt
+nnoremap <Leader><Space> o<Esc>
 
 " netrw
 nnoremap <C-e><C-e> :e .<CR>
@@ -49,16 +67,20 @@ nnoremap <down> gj
 nnoremap <up> gk
 
 " クリップボードにコピー
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " terminal
 autocmd TermOpen * setlocal norelativenumber
 autocmd TermOpen * setlocal nonumber
 
+" blade
+au BufRead,BufNewFile *.blade.php set filetype=html
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
+
 
 " Required:
 set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
@@ -82,6 +104,8 @@ if dein#load_state('~/.config/nvim/dein')
   call dein#add('kana/vim-operator-replace')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('tomtom/tcomment_vim')
+  "call dein#add('scrooloose/nerdtree')
+  call dein#add('junegunn/vim-peekaboo')
 
   " Required:
   call dein#end()
