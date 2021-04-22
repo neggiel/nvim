@@ -37,10 +37,21 @@ imap <C-n> <Down>
 imap <C-b> <Left>
 imap <C-f> <Right>
 
+" (te)
+" xやsではヤンクしない
+nnoremap x "_x
+nnoremap s "_s
+
+" ビジュアルモードで連続ペースト
+xnoremap p "_xP
+
 " 括弧補完
 " imap { {}<LEFT>
 " imap [ []<LEFT>
 " imap ( ()<LEFT>
+
+" json
+let g:vim_json_syntax_conceal = 0
 
 " leader
 let mapleader = "\<Space>"
