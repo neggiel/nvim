@@ -18,9 +18,13 @@ colorscheme molokai
 " マクロ
 let @d = 'vf";x'
 let @b = 'o'
-"let @n = ':tabnew:e .'
-let @p = ':set paste'
-let @o = ':set nopaste'
+"let @n = ':tabnew
+:e .
+'
+let @p = ':set paste
+'
+let @o = ':set nopaste
+'
 
 " ファイルタイプの変更
 "nnoremap <C-h><C-h> :set filetype=html<CR>
@@ -105,7 +109,7 @@ if dein#load_state('~/.config/nvim/dein')
   call dein#add('~/.config/nvim/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
-  call dein#add('Shougo/deoplete.nvim')
+  "call dein#add('Shougo/deoplete.nvim')
   call dein#add('itchyny/lightline.vim')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
